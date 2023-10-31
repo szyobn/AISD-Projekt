@@ -72,6 +72,7 @@
             button2.TabIndex = 2;
             button2.Text = "SS";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -118,12 +119,13 @@
             // 
             // button6
             // 
-            button6.Location = new Point(496, 113);
+            button6.Location = new Point(470, 116);
             button6.Name = "button6";
             button6.Size = new Size(112, 34);
             button6.TabIndex = 7;
             button6.Text = "Generuj";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // numericUpDown1
             // 
@@ -131,6 +133,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(180, 31);
             numericUpDown1.TabIndex = 8;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // label2
             // 
@@ -147,9 +150,8 @@
             label3.AutoSize = true;
             label3.Location = new Point(74, 175);
             label3.Name = "label3";
-            label3.Size = new Size(59, 25);
+            label3.Size = new Size(0, 25);
             label3.TabIndex = 10;
-            label3.Text = "label3";
             // 
             // textBox1
             // 
@@ -157,6 +159,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(150, 31);
             textBox1.TabIndex = 11;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Form1
             // 
