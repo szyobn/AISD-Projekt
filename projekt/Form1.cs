@@ -35,12 +35,58 @@ namespace projekt
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                int liczbaN = (int)numericUpDown1.Value;
+                int[] wynik1 = Random1(liczbaN);
+                int[] wynik = Si(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
 
+
+            }
+            else
+            {
+                string liczbaN = textBox1.Text.ToString();
+                int[] wynik1 = convert(liczbaN);
+                int[] wynik = Si(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                int liczbaN = (int)numericUpDown1.Value;
+                int[] wynik1 = Random1(liczbaN);
+                int[] wynik = SS(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
 
+
+            }
+            else
+            {
+                string liczbaN = textBox1.Text.ToString();
+                int[] wynik1 = convert(liczbaN);
+                int[] wynik = SS(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+            }
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -55,7 +101,7 @@ namespace projekt
                 int liczbaN = (int)numericUpDown1.Value;
                 int[] wynik = Random1(liczbaN);
                 label3.Text = "";
-                
+
 
             }
             else
@@ -63,7 +109,7 @@ namespace projekt
                 string liczbaN = textBox1.Text.ToString();
                 int[] wynik = convert(liczbaN);
                 label3.Text = "";
-                 
+
 
             }
 
@@ -126,13 +172,13 @@ namespace projekt
             do
             {
                 cbz = false;
-                for (int i = 1; i < n ; i++)
+                for (int i = 1; i < n; i++)
                 {
 
 
                     if (tab1[i] < tab1[i - 1])
                     {
-                        int a = tab1[i-1];
+                        int a = tab1[i - 1];
                         tab1[i - 1] = tab1[i];
                         tab1[i] = a;
                         cbz = true;
@@ -141,13 +187,55 @@ namespace projekt
 
                 }
                 n--;
-                
+
 
 
             }
             while (cbz);
             return tab1;
         }
+
+        int[] SS(int[] tab2)
+        {
+
+            for (int i = 0; i < tab2.Length - 1; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < tab2.Length; j++)
+                {
+                    if (tab2[min] > tab2[j])
+                    {
+                        min = j;
+                    }
+                }
+
+                int temp = tab2[i];
+                tab2[i] = tab2[min];
+                tab2[min] = temp;
+            }
+            return tab2;
+
+        }
+
+        int[] Si(int[] tab3)
+        {
+
+            for (int i = 1; i < tab3.Length; i++)
+            {
+                int temp = tab3[i];
+                int j = i - 1;
+
+                while (j >= 0 && tab3[j] > temp)
+                {
+                    tab3[j + 1] = tab3[j];
+                    j--;
+                }
+                tab3[j + 1] = temp;
+            }
+            return tab3;
+        }
+
+
 
 
 
@@ -173,6 +261,62 @@ namespace projekt
                 string liczbaN = textBox1.Text.ToString();
                 int[] wynik1 = convert(liczbaN);
                 int[] wynik = Sb(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                int liczbaN = (int)numericUpDown1.Value;
+                int[] wynik1 = Random1(liczbaN);
+                int[] wynik = Si(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+
+
+            }
+            else
+            {
+                string liczbaN = textBox1.Text.ToString();
+                int[] wynik1 = convert(liczbaN);
+                int[] wynik = Si(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                int liczbaN = (int)numericUpDown1.Value;
+                int[] wynik1 = Random1(liczbaN);
+                int[] wynik = Si(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+
+
+            }
+            else
+            {
+                string liczbaN = textBox1.Text.ToString();
+                int[] wynik1 = convert(liczbaN);
+                int[] wynik = Si(wynik1);
                 label3.Text = "";
                 for (int i = 0; i < wynik.Length; i++)
                 {

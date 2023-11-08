@@ -83,6 +83,7 @@
             button3.TabIndex = 3;
             button3.Text = "SI";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -102,6 +103,7 @@
             button5.TabIndex = 5;
             button5.Text = "SQ";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label1
             // 
