@@ -48,34 +48,29 @@ namespace projekt
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        void button6_Click(object sender, EventArgs e)
         {
-            
-            
-            
             if (checkBox1.Checked)
             {
                 int liczbaN = (int)numericUpDown1.Value;
                 int[] wynik = Random1(liczbaN);
                 label3.Text = "";
-                for (int i = 0; i < wynik.Length; i++)
-                {
-                    label3.Text += wynik[i].ToString() + " ";
-                }
+                
 
             }
             else
             {
                 string liczbaN = textBox1.Text.ToString();
                 int[] wynik = convert(liczbaN);
-                for (int i = 0; i < wynik.Length; i++)
-                {
-                    label3.Text += wynik[i].ToString() + " ";
-                }
+                label3.Text = "";
+                 
 
             }
-            
-            
+
+
+
+
+
 
 
 
@@ -109,16 +104,81 @@ namespace projekt
         {
             var liczbyS = napis.Trim().Split(',');
             var liczby = new int[liczbyS.Length];
-            for (int i = 0;i < liczbyS.Length;i++)
+            for (int i = 0; i < liczbyS.Length; i++)
             {
                 liczby[i] = int.Parse(liczbyS[i].Trim());
 
             }
             return liczby;
         }
+
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        int[] Sb(int[] tab1)
+        {
+            bool cbz;
+            int n = tab1.Length;
+            do
+            {
+                cbz = false;
+                for (int i = 1; i < n ; i++)
+                {
+
+
+                    if (tab1[i] < tab1[i - 1])
+                    {
+                        int a = tab1[i-1];
+                        tab1[i - 1] = tab1[i];
+                        tab1[i] = a;
+                        cbz = true;
+
+                    }
+
+                }
+                n--;
+                
+
+
+            }
+            while (cbz);
+            return tab1;
+        }
+
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                int liczbaN = (int)numericUpDown1.Value;
+                int[] wynik1 = Random1(liczbaN);
+                int[] wynik = Sb(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+
+
+            }
+            else
+            {
+                string liczbaN = textBox1.Text.ToString();
+                int[] wynik1 = convert(liczbaN);
+                int[] wynik = Sb(wynik1);
+                label3.Text = "";
+                for (int i = 0; i < wynik.Length; i++)
+                {
+                    label3.Text += wynik[i].ToString() + " ";
+                }
+            }
         }
     }
 }
